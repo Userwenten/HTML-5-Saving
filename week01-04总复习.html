@@ -1,0 +1,240 @@
+<!-- 
+    一.变量和常量
+    1.变量和常量的应用
+        - var
+            - 重复声明,省略var
+        - let
+            - 变量的声明,优于var
+        - const
+            - 约定变量名称一般全部大写   cosnt NUM = 100;
+            - 值不会改变(函数声明，对象的声明，元素获取...)
+
+    2.变量提升问题
+        - var存在变量提升
+        - let属于暂时性死区
+
+    3.变量的命名：
+        - 小驼峰命名：从第二个单词开始，首字母大写。
+        - 匈牙利命名：第一个字符表示类型。
+
+    4.变量的作用域：
+        - 全局作用域
+        - 局部作用域
+        - 块级作用域
+
+    5.var let const 区别 - 面试题
+
+    6.变量的作用域链 - 内-外.
+
+    二.变量的类型以及检测方式
+    1.变量的类型：7种
+        - 基本类型(简单类型)：number/string/boolean/null/undefined/Symbol  
+        - null,undefined特殊类型
+        - 引用类型(复杂类型)：object
+
+    2.检测变量的数据类型
+        - typeof
+
+    3.输出的变量类型有哪些
+        - number/string/boolean/undefined/object/function(函数)/Symbol 
+
+    三.函数
+    1.this指向。
+    2.如何修改this指向。
+    3.普通函数，函数表达式，箭头函数应用，递归函数。
+    4.arguments类数组。
+    5.构造函数特点
+    6.面向对象混合开发 - 构造函数+原型。
+    7.掌握函数封装 - 封装，重用，可扩展。
+    8.函数的防抖和节流。
+
+    四.数组
+    1.数组的算法。
+    2.数组的方法 - 全部。
+        - 转换方法：toString()转字符串 
+        - 检测方法：Array.isArray()
+        - 栈方法：后进先出，push后面追加，pop后面删除，后进的先删除。
+        - 队列方法：先进先出，unshift前面追加，shift前删除，先进的先删除。
+        - 重排序方法：reverse  sort
+        - 操作方法：concat slice splice
+        - 转换方法：join
+        - 位置方法：indexOf lastIndexOf includes
+        - 迭代方法：every some filter map forEach
+        - 归并方法：reduce reduceRight
+    3.值传递和引用传递
+        - 基本类型遵循值传递，可以直接=赋值
+        - 引用类型遵循引用传递(址传递)，不能=赋值(深浅拷贝赋值)
+    
+    五.自定义对象
+    1. 对象的属性名称一定是字符串，系统强制转换。
+    2. 读写属性值的两种方式：点操作符和中括号。
+    3. 对象的遍历 - for...in...
+
+    六.字符串
+    1.熟悉包装对象的概念
+    2.类数组的概念。
+    3.字符串下面的方法
+        - substring
+        - split
+        - trim
+        - toUpperCase
+        - toLowerCase
+        - charCodeAt
+        - String.formCharCode
+        - indexOf/lastIndexOf
+        - slice
+        - concat
+        - substr
+    4.正则表达式(regular expression)是一个描述字符规则的对象,使用正则表达式进行强大的模式匹配和文本检索与替换的方法
+    5.创建正则的两种方式
+        - RegExp类
+        - 字面量
+    6.能够使用正则的方法(字符串的方法)
+        - test
+        - replace
+        - split
+        - match
+    7.读懂常见的正则表达式
+        - 正则的控制字符。
+        - 对看看常见的正则怎么编写 - 百度。
+    8.正则的转义字符
+        - 转义字符：转义字符是字符的一种间接表示方式。在特殊语境中，无法直接使用字符自身。如果在一个正常字符前添加反斜杠，JavaScript 会忽略该反斜杠**
+        - 构造函数定义正则  -- \\
+        - 字面量定义正则    -- \
+
+    七.Math对象
+    1.Math对象下面常见的方法。(读懂方法的意义)
+    2.随机数设定范围。rannum(100)  rannum(3,6)
+
+    八.日期
+    1.注意：
+        - 注意星期(0-6)
+        - 注意月份(0-11)
+    2.设置日期 - 利用方法设置
+    3.完成倒计时效果。
+
+    九.DOM操作
+    1.DOM元素的获取
+        - querySelector/querySelectorAll
+    2.DOM元素的创建，追加，插入，删除，克隆，替换
+        - createElement
+        - appendChild
+        - insertBefore
+        - removeChild
+        - cloneNode
+    3.DOM元素类型
+        - 元素(1) 属性(2) 文本(3) 注释(8)
+        - nodeName、nodeType、nodeValue、tagName
+
+    4.childNodes与children的区别
+        - children不考虑空白节点，而childNodes考虑空白节点，而且它们都是类数组。
+    5.parentNode获取当前节点的父节点
+    6.outerHTML/innerHTML/innerText - 渲染的核心
+    7.读写css样式的值
+        - 读
+        - element.style.attrbute 读取行内的css属性值
+        - offsetLeft/offsetTop/offsetWidth/offsetHeight/offsetParent
+        - getComputedStyle/currentStyle(兼容)
+        - 写
+        - 利用style逐个设置 - 冗余
+        - 利用style下面的cssText设置
+        - 利用类名设置
+
+    十.BOM对象
+    1.location对象
+        - location.href 读写地址栏
+        - location.search 读取地址栏?后面的数据，包括?
+        - location.hash 读取地址栏#后面的数据，包括#
+        - location.reload刷新页面，参数true.
+
+    2.可视区和滚动条的值
+        - 获取可视区 - document.documentElement.clientWidth/document.documentElement.clientHeight
+        - 读写滚动条的距离 - document.documentElement.scrollTop/document.documentElement.scrollLeft
+
+    3.定时器
+        - 间隔定时器 - setInterval(fn,time)   clearInterval(定时器的返回值)
+        - 延时定时器 - setTimeout(fn,time) clearTimeout(定时器的返回值)
+        
+    4.同步和异步
+
+    十一.事件对象
+    1.位置属性
+        - clientX,clientY：鼠标相对于可视区的位置。
+        - pageX,pageY：鼠标相对于文档的位置。   
+        - offsetX,offsetY：鼠标相对于操作元素(鼠标位置)到元素边缘(左上)的位置.
+
+    2.键盘事件的属性
+        - keyCode || which 获取键码
+        - 组合键event.ctrlKey、event.altKey、event.shiftKey 分别代表ctrl alt shift键
+
+    3.浏览器的默认行为
+        - javascript中的默认行为是指javascript中事件本身具有的属性
+        - ev.preventDefault()
+        - ev.returnValue = false
+    
+    4.事件流
+        - "DOM2级事件"规定的事件流包括三个阶段：事件捕获阶段、目标阶段和事件冒泡阶段
+        - IE的事件流叫做事件冒泡，即事件开始时由最具体的元素接收，然后逐级向上传播到较为不具体的节点,一直到文档document 
+        - ev.cancelBubble=true
+        - ev.stopPropagation() 
+        
+    5.事件监听器（事件绑定）
+        - DOM 0级事件和DOM 2级事件的概念
+        - target.addEventListener("事件类型", 函数, 是否捕获(布尔值))--标准浏览器事件监听
+        - target.removeEventListener()--标准浏览器取消监听
+        - DOM 2级事件取代DOM 0级事件,反之不行。
+    
+    6.事件委托机制(代理) 
+        - 利用冒泡机制，将子元素事件委托给父元素执行。
+        - 获取当前操作的目标元素：ev.target || ev.srcElement
+        - 事件委托的优缺点：
+        - 优点：减少事件注册次数，节约内存，提升性能。
+        - 缺点：所有事件都用事件代理，可能会出现事件误判。即本不该被触发的事件被绑定上了事件。
+
+    7.写出5种以上的兼容问题。
+        - ev || window.event;
+        - ev.keyCode || ev.which
+        - ev.target || ev.srcElement
+
+    8.代码实现时间委托(ev.target || ev.srcElement)
+
+
+    十二.JSON对象的介绍
+        - JSON 是一种轻量级的数据交换格式,JSON不是js独有的，独立的格式
+        - JSON的特点：
+            - json:是一种轻量级的数据交换格式，不是js独有的。     
+            - json组成：简单值+'对象'+'数组'
+            - json里面字符串需要添加双引号。
+            - json没有var关键字,没有分号(;)等js相关的语法。
+        - JSON的静态方法：
+            - JSON.parse( )：用于从一个字符串中解析出json对象，具有json检测功能
+            - JSON.stringify( )：用于从一个对象解析出json格式字符串
+    
+    十三.ES6基础内容
+    1.解构赋值
+        - 对象的解构赋值
+        - 函数传参解构赋值
+        - 返回多个值，返回对象，数组。
+    2.扩展运算符，解析数组，类数组，Set，Map等数据结构
+    3.模板字符串 - 增强版字符串
+    4.箭头函数的特点
+        - 简洁
+        - this指向和不变
+        - 不是构造函数，不能使用arguments
+        - 不适合复杂的逻辑，不适合放置最外层
+
+    5.Generators生成器函数
+        - Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。
+    
+    6.for...of遍历(Iterator带来的)
+    7.数组和对象的扩展 - 都是方法
+        - Array.form
+        - Array.of
+        - includes
+        - Object.assign
+        - Object.keys
+        - Object.values
+        - 对象的简写风格
+    8.class(类)面向对象编程 - class - 语法糖
+
+ -->
